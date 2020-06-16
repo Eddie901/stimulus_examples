@@ -1,16 +1,30 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="main.css">
-  <script src="bundle.js" async></script>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+    <script src="bundle.js" async></script>
 </head>
 <body>
-<h1 data-controller="example"></h1>
-
-<div data-controller="hello">
-  <input data-target="hello.name" type="text">
-  <button data-action="click->hello#greet">Greet</button>
+<div data-controller="clipboard">
+    PIN: <input data-target="clipboard.source" type="text" value="1234" readonly>
+    <button data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</button>
 </div>
+
+<div data-controller="clipboard">
+    PIN: <input data-target="clipboard.source" type="text" value="3737" readonly>
+    <button data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</button>
+</div>
+
+<div data-controller="clipboard">
+    PIN: <input data-target="clipboard.source" type="text" value="9876" readonly>
+    <a href="#" data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</a>
+</div>
+
+<div data-controller="clipboard">
+    PIN: <textarea data-target="clipboard.source" readonly>What a load of rubbish</textarea>
+    <a href="#" data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</a>
+</div>
+
 </body>
 </html>
